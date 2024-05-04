@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../../../../../utlis/constants/WSizes.dart';
 import '../../../../../utlis/helpers/helper_funtions.dart';
 
-
 class OnBoardingPage extends StatelessWidget {
   const OnBoardingPage({
     super.key,
