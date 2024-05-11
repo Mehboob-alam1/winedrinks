@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:winedrinks/navigation_menu.dart';
 
 import '../../../../../utlis/constants/WSizes.dart';
 import '../../../../../utlis/constants/colors.dart';
 import '../../../../../utlis/constants/text_strings.dart';
+import '../../password_configuration/forget_password.dart';
 
 
 class WLoginForm extends StatelessWidget {
@@ -49,7 +52,7 @@ class WLoginForm extends StatelessWidget {
               /// Forget Password
 
               TextButton(
-                  onPressed: () {},
+                  onPressed: ()=> Get.to(()=>const ForgetPassWord()),
                   child: const Text(
                     WTexts.forgetPassword,
                     style: TextStyle(color: WColors.primary,fontFamily: 'Poppins',fontSize: 12),
@@ -63,7 +66,7 @@ class WLoginForm extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: ()=>Get.to(()=>const NavigationMenu()),
               style: ElevatedButton.styleFrom(textStyle: const TextStyle(color: WColors.white,fontFamily: 'Poppins',fontWeight: FontWeight.w600)),
               child:  const Text(WTexts.login),
             ),
