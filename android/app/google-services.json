@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "1031946659785",
+    "project_id": "drinks-b5f44",
+    "storage_bucket": "drinks-b5f44.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1031946659785:android:8eb13c1e06d99d500e6a18",
+        "android_client_info": {
+          "package_name": "com.example.winedrinks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1031946659785-h2jor7uela7k80n5clm0kp76a3bk58ua.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.winedrinks",
+            "certificate_hash": "aa08af46bb41b22985eff360a5afc9d389b283c0"
+          }
+        },
+        {
+          "client_id": "1031946659785-dtfsgskjggiobip5ea8abv6ldpe7i56b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkF5I3m7daH26PbrXOciwFQR6_dfAjsMo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1031946659785-dtfsgskjggiobip5ea8abv6ldpe7i56b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1031946659785-b5o5sh7umtrec2v2ra18qo6ut6edog6l.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.winedrinks"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
