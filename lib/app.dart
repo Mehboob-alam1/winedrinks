@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:winedrinks/features/authentication/screens/onboarding/onboarding.dart';
+import 'package:winedrinks/utlis/constants/colors.dart';
 import 'package:winedrinks/utlis/themes/theme.dart';
 
 class App extends StatelessWidget {
@@ -12,7 +12,7 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: WAppTheme.lightTheme,
       darkTheme: WAppTheme.darkTheme,
-      home: const OnBoardingScreen(),
+      home: const Scaffold(backgroundColor: WColors.primary,body: Center(child: CircularProgressIndicator(color: WColors.white),),),
 
     );
   }
