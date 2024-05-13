@@ -1,3 +1,4 @@
+
 class WValidator {
   static String? validateEmail(String? value) {
     if (value == null || value.isEmpty) {
@@ -53,6 +54,14 @@ class WValidator {
       return 'Invalid phone number format (10 digits required).';
     }
 
+    return null;
+  }
+
+  // Empty text validation
+  static String? validateEmptyText(String? fieldName, String? value) {
+    if (value == null || value.isEmpty) {
+      return '$fieldName is required';
+    }
     return null;
   }
 }

@@ -16,6 +16,7 @@ class WImages{
   static const String myNotes="assets/images/my_notes.png";
   static const String allNotes="assets/images/all_notes.png";
   static const String myRating="assets/images/my_rating.png";
+  static const String loadingWine="assets/animations/loading.json";
 
 
 }
