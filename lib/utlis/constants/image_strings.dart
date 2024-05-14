@@ -17,6 +17,10 @@ class WImages{
   static const String allNotes="assets/images/all_notes.png";
   static const String myRating="assets/images/my_rating.png";
   static const String loadingWine="assets/animations/loading.json";
+  static const String deliveredEmailIllustration = "assets/images/animations/sammy-line-man-receives-a-mail.png";
+  static const String staticSuccessIllustration = "assets/images/animations/sammy-line-success.png";
+
+
 
 
 }

@@ -14,11 +14,11 @@ static customToast({required message}){
   ScaffoldMessenger.of(Get.context!).showSnackBar(
     SnackBar(
       elevation: 0,
-      duration: Duration(seconds: 3),
+      duration: const Duration(seconds: 3),
       backgroundColor: Colors.transparent,
       content: Container(
-        padding: EdgeInsets.all(12),
-        margin: EdgeInsets.symmetric(horizontal: 30),
+        padding: const EdgeInsets.all(12),
+        margin: const EdgeInsets.symmetric(horizontal: 30),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
           color: WHelperFunctions.isDarkMode(Get.context!) ? WColors.darkerGrey.withOpacity(0.9) :WColors.grey.withOpacity(0.9),
@@ -37,11 +37,11 @@ static customToast({required message}){
       isDismissible: true,
       shouldIconPulse: true,
       colorText: WColors.white,
-      backgroundColor: WColors.primary,
+      backgroundColor: Colors.green,
       snackPosition: SnackPosition.BOTTOM,
       duration: Duration(seconds:  duration),
-      margin: EdgeInsets.all(10),
-      icon: Icon(Iconsax.check,color: WColors.white),
+      margin: const EdgeInsets.all(10),
+      icon: const Icon(Iconsax.check,color: WColors.white),
     );
   }
 
@@ -57,8 +57,8 @@ static customToast({required message}){
       backgroundColor: Colors.orange,
       snackPosition: SnackPosition.BOTTOM,
       duration: Duration(seconds:  duration),
-      margin: EdgeInsets.all(20),
-      icon: Icon(Iconsax.warning_2,color: WColors.white),
+      margin: const EdgeInsets.all(20),
+      icon: const Icon(Iconsax.warning_2,color: WColors.white),
     );
   }
 
@@ -71,9 +71,9 @@ static customToast({required message}){
       colorText: WColors.white,
       backgroundColor: Colors.red.shade600,
       snackPosition: SnackPosition.BOTTOM,
-      duration: Duration(seconds:  3),
-      margin: EdgeInsets.all(20),
-      icon: Icon(Iconsax.warning_2,color: WColors.white),
+      duration: const Duration(seconds:  3),
+      margin: const EdgeInsets.all(20),
+      icon: const Icon(Iconsax.warning_2,color: WColors.white),
     );
   }
 
