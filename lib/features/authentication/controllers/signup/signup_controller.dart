@@ -79,7 +79,7 @@ class SignUpController extends GetxController {
     
       // Move to verify email
       
-      Get.to(()=>  const VerifyEmailScreen());
+      Get.to(()=>   VerifyEmailScreen(email: email.text.trim()));
     } catch (e) {
       WFullScreenLoader.stopLoading();
       WLoaders.errorSnackBar(title: 'Oh snap!', message: e.toString());
