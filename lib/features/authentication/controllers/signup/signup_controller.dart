@@ -39,8 +39,6 @@ class SignUpController extends GetxController {
         return;
       }
 
-      ///TODO
-      ///https://youtu.be/8TIFDZq97Q8?list=PL5jb9EteFAOAusKTSuJ5eRl1BapQmMDT6  16:32
 
       // Form validation
 

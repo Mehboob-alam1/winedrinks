@@ -19,7 +19,7 @@ class WTexts {
   static const String loginWithFacebook = "Login with Facebook";
   static const String signupWithFacebook = "Sign Up with Facebook";
   static const String password = "Password";
-  static const String rememberMe = "Password";
+  static const String rememberMe = "Remember Me";
   static const String name = "Name";
   static const String userName = "User name";
   static const String dontHaveAccount = "Don’t Have any Account!";
