@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:winedrinks/features/authentication/controllers/login/login_controller.dart';
 
 import '../../../../../common/widgets/login_signup/outlined_logo_text_button.dart';
 import '../../../../../utlis/constants/WSizes.dart';
@@ -13,12 +15,14 @@ class SignUpSocialButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller= Get.put(LoginController());
     return Column(
       children: [
         WOutlinedLogoTextButton(
             image: WImages.googleLogo,
             text: WTexts.signupWithGoogle,
-            onPressed: () {}),
+            onPressed: ()=>controller.googleSignIn()
+        ),
         const SizedBox(height: WSizes.spaceBtwItems),
         WOutlinedLogoTextButton(
             image: WImages.facebookLogo,

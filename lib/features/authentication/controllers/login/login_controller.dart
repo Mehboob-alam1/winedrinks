@@ -7,6 +7,7 @@ import 'package:winedrinks/utlis/constants/image_strings.dart';
 import 'package:winedrinks/utlis/popups/full_screen_loader.dart';
 
 import '../../../../utlis/network/network_manager.dart';
+import '../../../personalization/controllers/user_controller.dart';
 
 class LoginController extends GetxController {
   /// Variables
@@ -17,13 +18,19 @@ class LoginController extends GetxController {
   final password = TextEditingController();
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
   final localStorage = GetStorage();
+  final userController = Get.put(UserController());
+
 
 
   @override
   void onInit() {
     super.onInit();
-    email.text=localStorage.read('REMEMBER_ME_EMAIL');
-    password.text=localStorage.read('REMEMBER_ME_PASSWORD');
+    if(localStorage.read('REMEMBER_ME_EMAIL') !=null) {
+      email.text = localStorage.read('REMEMBER_ME_EMAIL');
+    }
+    if(localStorage.read('REMEMBER_ME_PASSWORD') !=null) {
+      password.text = localStorage.read('REMEMBER_ME_PASSWORD');
+    }
   }
 
   /// Email & Password Sign In
@@ -59,8 +66,7 @@ class LoginController extends GetxController {
 
       // Login user with Email & Password Authentication
 
-      final userCredentials = await AuthenticationRepository.instance
-          .loginWithEmailAndPassword(email.text.trim(), password.text.trim());
+      final userCredentials = await AuthenticationRepository.instance.loginWithEmailAndPassword(email.text.trim(), password.text.trim());
 
       // Remove Loader
 
@@ -69,7 +75,49 @@ class LoginController extends GetxController {
       // Redirect
       AuthenticationRepository.instance.screenRedirect();
     } catch (e) {
+
+
       WFullScreenLoader.stopLoading();
+
+      WLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
+    }
+  }
+
+
+  /// -- Google SignIn Authentication
+
+  Future<void> googleSignIn() async {
+    try {
+      // Start loading
+
+      WFullScreenLoader.openLoadingDialog(
+          'Logging you in...', WImages.loadingWine);
+
+      // Check Internet Connectivity
+      final isConnected = await NetworkManager.instance.isConnected();
+      if (!isConnected) {
+        WFullScreenLoader.stopLoading();
+        return;
+      }
+
+      // Google Authentication
+
+      final userCredentials =
+      await AuthenticationRepository.instance.signInWithGoogle();
+
+      // Save User Record
+
+      await userController.saveUserRecord(userCredentials);
+
+      // Remove loader
+
+      WFullScreenLoader.stopLoading();
+
+      AuthenticationRepository.instance.screenRedirect();
+
+    } catch (e) {
+      WFullScreenLoader.stopLoading();
+
       WLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
     }
   }

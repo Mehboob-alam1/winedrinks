@@ -23,7 +23,7 @@ class SignUpController extends GetxController {
 
   /// Sign Up
 
-  Future<void> signUp() async {
+void signUp() async {
     try {
       // Start loading
 
