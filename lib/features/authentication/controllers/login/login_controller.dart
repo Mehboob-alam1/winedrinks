@@ -10,7 +10,10 @@ import '../../../../utlis/network/network_manager.dart';
 import '../../../personalization/controllers/user_controller.dart';
 
 class LoginController extends GetxController {
+
+
   /// Variables
+
 
   final rememberMe = false.obs;
   final hidePassword = false.obs;
@@ -41,7 +44,7 @@ class LoginController extends GetxController {
       WFullScreenLoader.openLoadingDialog(
           'Logging you in', WImages.loadingWine);
 
-      // check internet connectivity
+      // Check Internet connectivity
 
       final isConnected = await NetworkManager.instance.isConnected();
 
@@ -83,8 +86,7 @@ class LoginController extends GetxController {
     }
   }
 
-
-  /// -- Google SignIn Authentication
+  /// -- Google SignIn
 
   Future<void> googleSignIn() async {
     try {
@@ -114,11 +116,16 @@ class LoginController extends GetxController {
       WFullScreenLoader.stopLoading();
 
       AuthenticationRepository.instance.screenRedirect();
-
     } catch (e) {
       WFullScreenLoader.stopLoading();
 
       WLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
     }
   }
+
+
+
+
+
+
 }

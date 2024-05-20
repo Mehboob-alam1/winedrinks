@@ -21,7 +21,7 @@ class WAppBar extends StatelessWidget {
           backgroundImage:AssetImage(image),
         ),
         Text(title,style: Theme.of(context).textTheme.headlineSmall),
-        const Icon(Iconsax.menu_14,size: 24,)
+        const Icon(Iconsax.menu_14,size: 24)
       ],
     );
   }

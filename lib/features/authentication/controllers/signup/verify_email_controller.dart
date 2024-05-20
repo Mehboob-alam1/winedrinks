@@ -30,7 +30,7 @@ class VerifyEmailController extends GetxController {
     }
   }
 
-  /// Timer to automatically redirect on email verification
+  /// Timer to Automatically Redirect on Email Verification
   setTimerForAutoRedirect() {
     Timer.periodic(const Duration(seconds: 1), (timer) async {
       await FirebaseAuth.instance.currentUser?.reload();
@@ -46,7 +46,7 @@ class VerifyEmailController extends GetxController {
     });
   }
 
-  /// Manually check if email verified
+  /// Manually check if Email Verified
 
   checkEmailVerificationStatus() async {
     final currentUser = FirebaseAuth.instance.currentUser;
@@ -59,4 +59,5 @@ class VerifyEmailController extends GetxController {
           onPressed: () => AuthenticationRepository.instance.screenRedirect()));
     }
   }
+
 }

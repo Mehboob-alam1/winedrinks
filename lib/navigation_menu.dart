@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:winedrinks/features/drinks/screens/home/home.dart';
+import 'package:winedrinks/features/personalization/screens/profile/profile_screen.dart';
 
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
@@ -35,6 +36,6 @@ class NavigationController extends GetxController {
   final screens = [
     const HomeScreen(),
     Container(color: Colors.orange),
-    Container(color: Colors.blue),
+    const ProfileScreen(),
   ];
 }
