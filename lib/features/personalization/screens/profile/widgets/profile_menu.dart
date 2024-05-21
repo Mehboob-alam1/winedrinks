@@ -23,7 +23,7 @@ class WProfileMenu extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(title,
-              style: Theme.of(context).textTheme.headlineSmall,
+              style: Theme.of(context).textTheme.bodyMedium,
               overflow: TextOverflow.ellipsis),
 
           const SizedBox(height: WSizes.spaceBtwItems / 2),
@@ -58,7 +58,8 @@ class WProfileMenu extends StatelessWidget {
                 ),
               ),
             ),
-          )
+          ),
+
         ],
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:winedrinks/common/styles/spacing_styles.dart';
 import 'package:winedrinks/utlis/constants/WSizes.dart';
 import 'package:winedrinks/utlis/constants/image_strings.dart';
@@ -6,19 +7,21 @@ import 'package:winedrinks/utlis/constants/text_strings.dart';
 
 import '../../../../common/widgets/bars/app_bar.dart';
 import '../../../../common/widgets/card/home_card.dart';
+import '../../../personalization/controllers/user_controller.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller= Get.put(UserController());
     return Scaffold(
       body: Padding(
         padding: WSpacingStyles.paddingWithAppBarHeight,
         child: Column(
           children: [
-            const WAppBar(
-                image: WImages.userImage, isNetworkImage: false, title: 'Home'),
+             WAppBar(
+                image: controller.user.value.profilePicture, isNetworkImage: false, title: 'Home'),
 
             const SizedBox(height: WSizes.spaceBtwSections),
 

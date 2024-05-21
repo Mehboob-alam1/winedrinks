@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:winedrinks/features/personalization/controllers/user_controller.dart';
 
 
 class WAppBar extends StatelessWidget {
@@ -13,10 +15,12 @@ class WAppBar extends StatelessWidget {
   @override
 
   Widget build(BuildContext context) {
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         CircleAvatar(
+
           radius: 24,
           backgroundImage:AssetImage(image),
         ),
