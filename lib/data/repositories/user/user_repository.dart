@@ -1,7 +1,10 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:winedrinks/data/repositories/authentication/authentication_repository.dart';
 import 'package:winedrinks/features/authentication/models/user/user_model.dart';
 import 'package:winedrinks/utlis/exceptions/firebase_exceptions.dart';
@@ -33,7 +36,10 @@ class UserRepository extends GetxController {
 
   Future<UserModel> fetchUserDetails() async {
     try {
-      final documentSnapShot = await _db.collection("Users").doc(AuthenticationRepository.instance.authUser?.uid).get();
+      final documentSnapShot = await _db
+          .collection("Users")
+          .doc(AuthenticationRepository.instance.authUser?.uid)
+          .get();
 
       if (documentSnapShot.exists) {
         return UserModel.fromSnapShot(documentSnapShot);
@@ -78,6 +84,23 @@ class UserRepository extends GetxController {
           .collection("Users")
           .doc(AuthenticationRepository.instance.authUser?.uid)
           .update(json);
+    } on FirebaseException catch (e) {
+      throw WFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const FormatException();
+    } on PlatformException catch (e) {
+      throw WPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  }
+
+  Future<String> uploadImage(String path, XFile image) async {
+    try {
+      final ref = FirebaseStorage.instance.ref(path).child(image.name);
+      await ref.putFile(File(image.path));
+      final url = await ref.getDownloadURL();
+      return url;
     } on FirebaseException catch (e) {
       throw WFirebaseException(e.code).message;
     } on FormatException catch (_) {

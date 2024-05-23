@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:winedrinks/common/widgets/text_image/back_button.dart';
 import 'package:winedrinks/features/personalization/screens/profile/widgets/profile_menu.dart';
@@ -67,11 +66,7 @@ class ProfileScreen extends StatelessWidget {
              ),
               const SizedBox(height: WSizes.spaceBtwItems),
 
-              Stack(
-                  children: [
-                const CircleAvatar(radius: 50, backgroundImage: AssetImage(WImages.profilePic)),
-                Positioned(bottom: 5, right: 10, child: Image.asset(WImages.imgEdit, height: 25, width: 25)),
-              ]),
+              const CircleAvatar(radius: 50, backgroundImage: AssetImage(WImages.profilePic)),
 
                WProfileMenu(title: 'Name', value: controller.user.value.name),
                WProfileMenu(title: 'Email Address', value: controller.user.value.email),

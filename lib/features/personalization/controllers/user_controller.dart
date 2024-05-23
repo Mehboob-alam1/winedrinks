@@ -23,22 +23,27 @@ class UserController extends GetxController {
 
   Future<void> saveUserRecord(UserCredential? userCredential) async {
     try {
-      if (userCredential != null) {
-        // Map Data
+/// First update the Rx user value and then check if the user data is already stored. if not store new data
+      await fetchUserRecord();
 
-        final user = UserModel(
-            id: userCredential.user!.uid,
-            userName: userCredential.user!.displayName ?? '',
+      if(user.value.id.isEmpty) {
+        if (userCredential != null) {
+          // refresh user record
 
-            email: userCredential.user!.email ?? '',
-            password: '',
-            profilePicture: userCredential.user!.photoURL ?? '',
-            name: userCredential.user!.displayName ?? '');
+          // Map Data
 
-        // Save user data
-        await userRepository.saveUserRecord(user);
+          final user = UserModel(
+              id: userCredential.user!.uid,
+              userName: userCredential.user!.displayName ?? '',
 
+              email: userCredential.user!.email ?? '',
+              password: '',
+              profilePicture: userCredential.user!.photoURL ?? '',
+              name: userCredential.user!.displayName ?? '');
 
+          // Save user data
+          await userRepository.saveUserRecord(user);
+        }
       }
     } catch (e) {
       WLoaders.warningSnackBar(
@@ -59,5 +64,10 @@ class UserController extends GetxController {
     } catch(e){
       user(UserModel.empty());
     }
+  }
+
+
+  uploadUserProfilePicture() async{
+
   }
 }

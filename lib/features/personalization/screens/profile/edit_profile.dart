@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:winedrinks/features/personalization/controllers/profile_controller.dart';
+import 'package:winedrinks/features/personalization/controllers/user_controller.dart';
 import 'package:winedrinks/features/personalization/screens/profile/profile_screen.dart';
 import 'package:winedrinks/features/personalization/screens/profile/widgets/edit_profile_form.dart';
 import 'package:winedrinks/utlis/constants/text_strings.dart';
@@ -17,6 +18,7 @@ class EditProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(ProfileController());
+    final userController= UserController.instance;
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -44,12 +46,12 @@ class EditProfileScreen extends StatelessWidget {
                 Positioned(
                     bottom: 5,
                     right: 10,
-                    child: Image.asset(WImages.imgEdit, height: 25, width: 25)),
+                    child: GestureDetector(onTap:()=> userController.uploadUserProfilePicture(),child: Image.asset(WImages.imgEdit, height: 25, width: 25))),
               ]),
 
-              SizedBox(height: WSizes.spaceBtwSections),
+              const SizedBox(height: WSizes.spaceBtwSections),
 
-              WEditProfileForm(),
+              const WEditProfileForm(),
 
               SizedBox(
                 width: double.infinity,
