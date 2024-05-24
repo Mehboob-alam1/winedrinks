@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:winedrinks/common/styles/spacing_styles.dart';
+import 'package:winedrinks/features/drinks/screens/notes/new_notes/new_notes.dart';
 import 'package:winedrinks/utlis/constants/WSizes.dart';
 import 'package:winedrinks/utlis/constants/image_strings.dart';
 import 'package:winedrinks/utlis/constants/text_strings.dart';
@@ -22,7 +23,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
 
           children: [
-             WAppBar(title: 'Home'),
+             const WAppBar(title: 'Home'),
 
             const SizedBox(height: WSizes.spaceBtwSections),
 
@@ -31,7 +32,7 @@ class HomeScreen extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    WHomeCard(height: 200, radius: 10, image: WImages.newNotes, title: WTexts.newNotes, subTitle: WTexts.startNewNote, onTap: () {  }),
+                    WHomeCard(height: 200, radius: 10, image: WImages.newNotes, title: WTexts.newNotes, subTitle: WTexts.startNewNote, onTap: ()=> Get.to(()=>const NewNotesScreen())),
                     const SizedBox(width: WSizes.spaceBtwItems/2),
                     WHomeCard(height: 200, radius: 10, image: WImages.myNotes, title: WTexts.myNotes, subTitle: WTexts.clickToSeeNotes, onTap: () {  }),
                   ],

@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:winedrinks/common/widgets/images/w_circular_image.dart';
-import 'package:winedrinks/common/widgets/loaders/t_loaders.dart';
-import 'package:winedrinks/common/widgets/text_image/back_button.dart';
 import 'package:winedrinks/features/personalization/controllers/profile_controller.dart';
 import 'package:winedrinks/features/personalization/screens/profile/widgets/profile_menu.dart';
 import 'package:winedrinks/utlis/constants/WSizes.dart';
@@ -32,7 +30,7 @@ class ProfileScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                SizedBox(),
+                const SizedBox(),
 
                   Text('Profile',
                       style: Theme.of(context).textTheme.headlineSmall),

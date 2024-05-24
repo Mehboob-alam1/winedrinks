@@ -46,10 +46,7 @@ class UserController extends GetxController {
         }
       }
     } catch (e) {
-      WLoaders.warningSnackBar(
-          title: 'Data not saved',
-          message:
-              'Something went wrong while saving your information. You can re-save your data in your profile');
+      WLoaders.warningSnackBar(title: 'Data not saved', message: 'Something went wrong while saving your information. You can re-save your data in your profile');
     }
   }
 
