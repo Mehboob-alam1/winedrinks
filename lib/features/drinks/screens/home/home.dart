@@ -15,15 +15,17 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller= Get.put(UserController());
+
     return Scaffold(
       body: Padding(
         padding: WSpacingStyles.paddingWithAppBarHeight,
         child: Column(
+
           children: [
-             WAppBar(
-                image: controller.user.value.profilePicture, isNetworkImage: false, title: 'Home'),
+             WAppBar(title: 'Home'),
 
             const SizedBox(height: WSizes.spaceBtwSections),
+
 
             Column(
               children: [

@@ -50,7 +50,7 @@ class UserModel {
         userName: data?['UserName'] ?? '',
         email: data?['Email'] ?? '',
         password: data?['Password'] ?? '',
-        profilePicture: '',
+        profilePicture: data?['ProfilePicture'] ?? '',
       );
     } else {
       return UserModel.empty();

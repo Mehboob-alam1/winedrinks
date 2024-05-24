@@ -78,5 +78,7 @@ class ProfileController extends GetxController {
 
   }
 
+  
+
 
 }
